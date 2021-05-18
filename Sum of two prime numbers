@@ -1,0 +1,53 @@
+#include <iostream>
+using namespace std;
+int func(int num) 
+{
+   int i;
+   int flag = 1;
+   for(i = 2; i <= num/2; ++i) 
+   {
+      if(num % i == 0) 
+      {
+         flag = 0;
+         break;
+      }
+   }
+   return flag;
+}
+int main() 
+{
+   int num , i;
+   cout << "Enter a number : \n";
+   cin >> num;
+   for(i = 2; i <= num/2; ++i) 
+   {
+      if (func(i)) 
+     {
+         if (func(num - i)) 
+         {
+            cout << num << " = " << i << " + " << num-i << endl;
+         }
+      }
+   }
+   return 0;
+}
+
+Output
+Enter a number : 
+100
+100 = 3 + 97
+100 = 11 + 89
+100 = 17 + 83
+100 = 29 + 71
+100 = 41 + 59
+100 = 47 + 53
+
+Enter a number : 
+16
+16 = 3 + 13
+16 = 5 + 11
+Enter a number : 
+21
+21 = 2 + 19
+
+
